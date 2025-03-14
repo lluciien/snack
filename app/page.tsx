@@ -14,36 +14,33 @@ export default function BirthdayGift() {
 
   // Character information - replace with actual data
   const character = {
-    name: "小明",
-    fullName: "王小明",
-    birthDate: "1995年5月15日",
-    age: 29,
-    zodiac: "金牛座",
+    name: "九条",
+    fullName: "筒子糖",
+    birthDate: "3月18日",
+    age: 18,
+    zodiac: "双鱼座",
     personality: ["活泼", "善良", "有创意", "幽默", "细心"],
-    interests: ["编程", "阅读", "旅行", "摄影"],
-    motto: "生活不止眼前的苟且，还有诗和远方",
+    interests: ["唠嗑", "跑团", "oc", "画画"],
+    motto: "快乐就好",
     timeline: [
-      { year: 2010, event: "获得学校编程比赛一等奖" },
-      { year: 2014, event: "考入理想大学计算机系" },
-      { year: 2018, event: "毕业后加入知名科技公司" },
-      { year: 2022, event: "晋升为技术团队负责人" },
+      { year: 2023, event: "第一次跑蛙祭" },
+      { year: 2023, event: "第一次痛打队友" },
+      { year: 2023, event: "第一次暴打修格斯" },
+      { year: 2023, event: "被骰娘制裁落败" },
     ],
     funFacts: [
-      "他曾经一口气写了24小时代码不休息",
-      "他的第一个程序是8岁时用BASIC语言写的",
-      "他最喜欢的食物是妈妈做的红烧肉",
-      "他养了一只叫「二进制」的猫",
-      "他梦想环游世界的每个角落",
-      "他收藏了超过50个不同形状的马克杯",
+      "她曾经一口气打了四个队友",
+      "她的第一个ti决定了一切",
+      "她最喜欢调戏假正经的家伙",
     ],
     unlockableContent: [
-      "50分：小明的第一台电脑是8岁时父母送的生日礼物",
-      "100分：小明有一个秘密梦想是开发一款能帮助孩子学习编程的游戏",
+      "50分：你的最高伤害是9，平均dps是7每下",
+      "100分：少爷被你撵上树了",
     ],
     birthdayWish:
-      "祝你生日快乐！愿你在新的一年里代码无bug，创意无限，像贪吃蛇一样不断成长，吞噬更多的知识与经验。希望你的人生旅途充满惊喜与成就，就像游戏中不断刷新的高分一样！",
+      "祝你生日快乐！愿你在新的一年里天天开心，画画顺手，灵感不断",
     signedBy: "你最好的朋友",
-    date: "2024年5月15日",
+    date: "2024年3月",
   }
 
   // Check for unlockable content when score changes
