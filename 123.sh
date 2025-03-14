@@ -35,7 +35,7 @@ if [ -d "$PROJECT_DIR" ]; then
     git pull
 else
     echo -e "${YELLOW}正在克隆仓库...${NC}"
-    git clone https://github.com/lluciien/dancecat.git
+    git clone https://github.com/lluciien/snack.git
     cd $PROJECT_DIR
 fi
 
@@ -88,7 +88,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "6890:3000"
     restart: always
     environment:
       - NODE_ENV=production
