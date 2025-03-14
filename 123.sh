@@ -14,7 +14,6 @@ if ! command -v docker &> /dev/null; then
     sudo sh get-docker.sh
     sudo usermod -aG docker $USER
     echo -e "${GREEN}Docker安装完成！${NC}"
-    # 需要重新登录以应用组更改
     echo -e "${YELLOW}请重新登录终端后再次运行此脚本${NC}"
     exit 1
 fi
@@ -35,8 +34,16 @@ if [ -d "$PROJECT_DIR" ]; then
     git pull
 else
     echo -e "${YELLOW}正在克隆仓库...${NC}"
-    git clone https://github.com/lluciien/snack.git
+    git clone https://github.com/lluciien/snack.git $PROJECT_DIR
     cd $PROJECT_DIR
+fi
+
+# 确保 next.config.mjs 存在并配置 output: "standalone"
+echo -e "${YELLOW}检查并配置 next.config.mjs...${NC}"
+if [ ! -f "next.config.mjs" ]; then
+    echo 'export default { output: "standalone" };' > next.config.mjs
+else
+    sed -i 's/output: .*/output: "standalone",/' next.config.mjs || echo 'export default { output: "standalone" };' >> next.config.mjs
 fi
 
 # 创建Dockerfile
@@ -105,7 +112,7 @@ docker-compose up -d --build
 # 检查容器是否成功启动
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}部署成功！${NC}"
-    echo -e "${GREEN}应用现在运行在 http://localhost:3000${NC}"
+    echo -e "${GREEN}应用现在运行在 http://localhost:6890${NC}"
 else
     echo -e "${YELLOW}部署过程中出现错误，请检查日志${NC}"
     docker-compose logs
