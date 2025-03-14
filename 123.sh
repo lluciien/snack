@@ -80,8 +80,6 @@ EOF
 # 创建docker-compose.yml
 echo -e "${YELLOW}创建docker-compose.yml...${NC}"
 cat > docker-compose.yml << 'EOF'
-version: '3'
-
 services:
   dancecat:
     build:
