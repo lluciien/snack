@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fallingleaf {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.falling-leaves::before,
+.falling-leaves::after {
+  content: "🍃";
+  position: absolute;
+  top: -10px;
+  font-size: 20px;
+  animation: fallingleaf 10s linear infinite;
+  z-index: -1;
+}
+
+.falling-leaves::before {
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.falling-leaves::after {
+  left: 30%;
+  animation-delay: 3.5s;
+}
+
+.falling-leaves::before {
+  content: "🍃";
+}
+
+.falling-leaves::after {
+  content: "🍃";
+}
+
+/* Add more leaves with different delays */
+.falling-leaves::before {
+  left: 50%;
+  animation-delay: 2.5s;
+}
+
+.falling-leaves::after {
+  left: 70%;
+  animation-delay: 4.5s;
+}
+
+.falling-leaves::before {
+  left: 90%;
+  animation-delay: 0.5s;
+}
+
+.falling-leaves::after {
+  left: 20%;
+  animation-delay: 5.5s;
+}
+
+.falling-leaves::before {
+  left: 40%;
+  animation-delay: 6.5s;
+}
+
+.falling-leaves::after {
+  left: 60%;
+  animation-delay: 7.5s;
+}
+
+.falling-leaves::before {
+  left: 80%;
+  animation-delay: 8.5s;
+}
+
