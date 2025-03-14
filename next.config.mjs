@@ -2,12 +2,12 @@ let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
 } catch (e) {
-  // ignore error
+  console.log("Failed to load user config:", e.message)
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone"
+  output: "standalone", // 确保生成独立输出目录
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -28,8 +28,11 @@ mergeConfig(nextConfig, userConfig)
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
+    console.log("No user config found, using default config.")
     return
   }
+
+  console.log("Merging user config:", userConfig)
 
   for (const key in userConfig) {
     if (
